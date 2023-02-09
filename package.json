@@ -1,0 +1,25 @@
+{
+  "name": "multi-domain",
+  "version": "1.0.0",
+  "description": "The repo contains two Nextjs apps, one for the primary and one for the satellite domain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clerkinc/multi-domain-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clerkinc/multi-domain-test/issues"
+  },
+  "homepage": "https://github.com/clerkinc/multi-domain-test#readme",
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "turbo": "^1.7.4"
+  }
+}

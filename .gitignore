@@ -5,3 +5,7 @@ clerk*.tgz
 *.pem
 .yalc
 yalc.lock
+.turbo
+build/**
+dist/**
+

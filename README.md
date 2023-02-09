@@ -2,6 +2,28 @@
 
 The repo contains two Nextjs apps, one for the primary and one for the satellite domain.
 
+## Set up
+
+1. Install [turbo](https://turbo.build/).
+
+```
+npm i -g turbo
+```
+
+## Development
+
+Build all apps with
+
+```
+turbo build
+```
+
+Start all apps in development mode
+
+```
+turbo dev
+```
+
 ## Configuration
 
 The following environment variables are supported.
