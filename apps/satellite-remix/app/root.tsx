@@ -4,6 +4,7 @@ import { rootAuthLoader } from "@clerk/remix/ssr.server";
 import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
 import styles from "~/styles/shared.css";
 import Header from "~/components/Header";
+import { json } from "@remix-run/node";
 
 declare global {
   interface Window {
@@ -49,14 +50,12 @@ export const loader: LoaderFunction = (args) => {
       const { userId, sessionId, getToken } = request.auth;
       console.log("Root loader auth:", { userId, sessionId, getToken });
       // return { message: `Hello from the root loader :)` };
-      return {
+      return json({
         message: `Hello from the root loader :)`,
         ENV: getBrowserEnvironment(),
-      };
+      });
     },
-    {
-      loadUser: true,
-    }
+    { loadUser: true }
   );
 };
 
@@ -86,6 +85,6 @@ function App() {
   );
 }
 
-export default ClerkApp(App);
+export default ClerkApp(App, {});
 
 export const CatchBoundary = ClerkCatchBoundary();
