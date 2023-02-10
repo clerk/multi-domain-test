@@ -55,7 +55,11 @@ export const loader: LoaderFunction = (args) => {
         ENV: getBrowserEnvironment(),
       });
     },
-    { loadUser: true }
+    {
+      loadUser: true,
+      isSatellite: true,
+      domain: typeof window !== "undefined" ? window.ENV.CLERK_DOMAIN : process.env.CLERK_DOMAIN,
+    }
   );
 };
 
@@ -85,6 +89,10 @@ function App() {
   );
 }
 
-export default ClerkApp(App, {});
+export default ClerkApp(App, {
+  // @ts-ignore
+  isSatellite: true,
+  domain: typeof window !== "undefined" ? window.ENV.CLERK_DOMAIN : process.env.CLERK_DOMAIN,
+});
 
 export const CatchBoundary = ClerkCatchBoundary();
