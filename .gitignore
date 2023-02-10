@@ -8,4 +8,5 @@ yalc.lock
 .turbo
 build/**
 dist/**
-
+.DS_Store
+.idea
