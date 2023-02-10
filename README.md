@@ -35,3 +35,4 @@ CLERK_SECRET_KEY | string | Required. The instance's secret key. You can find it
 NEXT_PUBLIC_CLERK_DOMAIN | string | Required for applications that run on a satellite domain. Set this to `clerk.<your-domain>`.
 NEXT_PUBLIC_CLERK_SIGN_IN_URL | string | Required for applications that run on a satellite domain. This is the primary application's sign in url. Example: `https://<your-primary-domain>/sign-in`.
 CLERK_API_URL | string | The absolute URL of the Clerk Backend API. Defaults to https://api.clerk.com.
+NEXT_PUBLIC_CLERK_PROXY_URL | string | Required for applications that run behind a reverse proxy. Can be either a relative path (`/__clerk`) or a full URL (`https://<your-domain>/__clerk`).
