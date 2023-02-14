@@ -18,9 +18,15 @@ export default withClerkMiddleware((req) => {
     const path = req.nextUrl.pathname.replace(proxyUrl, "");
     const url = new URL(path, clerkFapi);
     url.search = req.nextUrl.search;
-    const response = NextResponse.rewrite(url);
-    response.headers.set("clerk-proxy-url", xClerkProxyUrl);
-    response.headers.set("clerk-secret-key", clerkSecretKey);
+
+    const reqHeaders = new Headers(req.headers);
+    reqHeaders.set("clerk-proxy-url", xClerkProxyUrl);
+    reqHeaders.set("clerk-secret-key", clerkSecretKey);
+    const response = NextResponse.rewrite(url, {
+      request: {
+        headers: reqHeaders,
+      },
+    });
     return response;
   }
 
