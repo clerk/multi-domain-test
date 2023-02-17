@@ -33,4 +33,4 @@ export default withClerkMiddleware((req) => {
   return NextResponse.next();
 });
 
-export const config = { matcher: "/((?!.*\\.).*)" };
+export const config = { matcher: "/((?!_next|favicon.ico).*)" };
