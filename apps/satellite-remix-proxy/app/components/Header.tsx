@@ -24,13 +24,7 @@ export default function Header() {
       </div>
       <div>
         <SignedOut>
-          <a
-            href={`${signInPath}?redirect_url=${homePath}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Sign in
-          </a>
+          <a href={`${signInPath}?redirect_url=${homePath}`}>Sign in</a>
         </SignedOut>
         <SignedIn>
           <UserButton userProfileUrl="/user" afterSignOutUrl="/" />
