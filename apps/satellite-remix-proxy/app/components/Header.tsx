@@ -12,14 +12,19 @@ const homePath =
 
 export default function Header() {
   return (
-    <header className="header">
-      <div className="left">
+    <header
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "1rem",
+      }}
+    >
+      <div>
         <Link to="/" className="logo">
-          <img src="/logo.svg" width="32" height="32" alt="Logo" />
-          <span className="appName">Your application</span>
+          <span className="appName">Remix app</span>
         </Link>
       </div>
-      <div className="right">
+      <div>
         <SignedOut>
           <a
             href={`${signInPath}?redirect_url=${homePath}`}
