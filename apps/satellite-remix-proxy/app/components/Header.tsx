@@ -3,12 +3,10 @@ import { Link } from "@remix-run/react";
 
 const signInPath =
   typeof window !== "undefined"
-    ? window.ENV.CLERK_SIGN_IN_URL
-    : process.env.CLERK_SIGN_IN_URL;
+    ? window.ENV.SIGN_IN_URL
+    : process.env.SIGN_IN_URL;
 const homePath =
-  typeof window !== "undefined"
-    ? window.ENV.CLERK_HOME_URL
-    : process.env.CLERK_HOME_URL;
+  typeof window !== "undefined" ? window.ENV.HOME_URL : process.env.HOME_URL;
 
 export default function Header() {
   return (

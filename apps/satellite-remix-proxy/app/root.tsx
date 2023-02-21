@@ -19,8 +19,8 @@ declare global {
       CLERK_PUBLISHABLE_KEY: string;
       CLERK_PROXY_URL: string;
       CLERK_IS_SATELLITE: string;
-      CLERK_SIGN_IN_URL: string;
-      CLERK_HOME_URL: string;
+      SIGN_IN_URL: string;
+      HOME_URL: string;
     };
   }
 }
@@ -88,6 +88,8 @@ function getBrowserEnvironment() {
     CLERK_PUBLISHABLE_KEY: env.CLERK_PUBLISHABLE_KEY,
     CLERK_PROXY_URL: env.CLERK_PROXY_URL,
     CLERK_IS_SATELLITE: env.CLERK_IS_SATELLITE,
+    SIGN_IN_URL: env.SIGN_IN_URL,
+    HOME_URL: env.HOME_URL,
   };
 }
 
