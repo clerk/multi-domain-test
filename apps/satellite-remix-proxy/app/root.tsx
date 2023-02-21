@@ -11,6 +11,7 @@ import {
 } from "@remix-run/react";
 import { rootAuthLoader } from "@clerk/remix/ssr.server";
 import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
+import Header from "~/components/Header";
 
 declare global {
   interface Window {
@@ -18,6 +19,8 @@ declare global {
       CLERK_PUBLISHABLE_KEY: string;
       CLERK_PROXY_URL: string;
       CLERK_IS_SATELLITE: string;
+      CLERK_SIGN_IN_URL: string;
+      CLERK_HOME_URL: string;
     };
   }
 }
@@ -62,6 +65,7 @@ function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <script
           dangerouslySetInnerHTML={{
