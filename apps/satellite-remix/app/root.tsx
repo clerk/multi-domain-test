@@ -5,6 +5,7 @@ import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
 import styles from "~/styles/shared.css";
 import Header from "~/components/Header";
 import { json } from "@remix-run/node";
+import * as console from "console";
 
 declare global {
   interface Window {
@@ -58,8 +59,9 @@ export const loader: LoaderFunction = (args) => {
     {
       loadUser: true,
       isSatellite: true,
-      domain: typeof window !== "undefined" ? window.ENV.CLERK_DOMAIN : process.env.CLERK_DOMAIN,
-    }
+      domain: (url) => url.host
+      // domain: typeof window !== "undefined" ? window.ENV.CLERK_DOMAIN : process.env.CLERK_DOMAIN,
+    } as const
   );
 };
 
