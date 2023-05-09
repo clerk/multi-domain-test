@@ -8,7 +8,7 @@
     "start": "remix-serve build"
   },
   "dependencies": {
-    "@clerk/remix": "2.2.7",
+    "@clerk/remix": "2.6.0-staging.0",
     "@remix-run/node": "^1.12.0",
     "@remix-run/react": "^1.12.0",
     "@remix-run/serve": "^1.12.0",
