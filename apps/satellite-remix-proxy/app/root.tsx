@@ -16,6 +16,7 @@ import Header from "~/components/Header";
 declare global {
   interface Window {
     ENV: {
+      CLERK_JS: string;
       CLERK_PUBLISHABLE_KEY: string;
       CLERK_PROXY_URL: string;
       CLERK_IS_SATELLITE: string;
@@ -39,7 +40,6 @@ export const loader: LoaderFunction = (args) => {
     },
     {
       loadUser: true,
-      isSatellite: true,
       proxyUrl:
         typeof window !== "undefined"
           ? window.ENV.CLERK_PROXY_URL
@@ -85,6 +85,7 @@ function getBrowserEnvironment() {
   const env = process.env;
 
   return {
+    CLERK_JS: env.CLERK_JS,
     CLERK_PUBLISHABLE_KEY: env.CLERK_PUBLISHABLE_KEY,
     CLERK_PROXY_URL: env.CLERK_PROXY_URL,
     CLERK_IS_SATELLITE: env.CLERK_IS_SATELLITE,
@@ -94,8 +95,6 @@ function getBrowserEnvironment() {
 }
 
 export default ClerkApp(App, {
-  //@ts-ignore
-  isSatellite: true,
   proxyUrl:
     typeof window !== "undefined"
       ? window.ENV.CLERK_PROXY_URL
