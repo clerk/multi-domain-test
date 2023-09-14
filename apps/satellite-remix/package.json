@@ -22,7 +22,7 @@
     "start": "remix-serve build"
   },
   "dependencies": {
-    "@clerk/remix": "2.9.0-snapshot.b5f1337",
+    "@clerk/remix": "2.10.3-snapshot.d9f7293",
     "@remix-run/node": "^1.3.5",
     "@remix-run/react": "^1.3.5",
     "@remix-run/vercel": "^1.3.5",
