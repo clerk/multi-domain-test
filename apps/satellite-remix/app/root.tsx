@@ -5,7 +5,8 @@ import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
 import styles from "~/styles/shared.css";
 import Header from "~/components/Header";
 import { json } from "@remix-run/node";
-import * as console from "console";
+import type { LinksFunction } from "@vercel/remix";
+import { cssBundleHref } from "@remix-run/css-bundle";
 
 declare global {
   interface Window {
@@ -24,12 +25,11 @@ export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
 
-export function links() {
-  return [
-    { rel: "stylesheet", href: "https://unpkg.com/modern-css-reset@1.4.0/dist/reset.min.css" },
-    { rel: "stylesheet", href: styles },
-  ];
-}
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: "https://unpkg.com/modern-css-reset@1.4.0/dist/reset.min.css" },
+  { rel: "stylesheet", href: styles },
+];
 
 function getBrowserEnvironment() {
   const env = process.env;
